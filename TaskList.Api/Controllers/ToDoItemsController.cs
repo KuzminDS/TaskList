@@ -26,7 +26,7 @@ namespace TaskList.Api.Controllers
         }
 
         [HttpGet("")]
-        public ActionResult<IEnumerable<ToDoItem>> GetAllToDoItems()
+        public ActionResult<IEnumerable<ToDoItemResource>> GetAllToDoItems()
         {
             var toDoItems = _toDoItemService.GetAllWithProject();
             var toDoItemsResources = _mapper.Map<IEnumerable<ToDoItem>, IEnumerable<ToDoItemResource>>(toDoItems);
@@ -34,7 +34,7 @@ namespace TaskList.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult<IEnumerable<ToDoItem>> GetById(int id)
+        public ActionResult<ToDoItemResource> GetById(int id)
         {
             var toDoItem = _toDoItemService.GetToDoItem(id);
             var toDoItemsResource = _mapper.Map<ToDoItem, ToDoItemResource>(toDoItem);

@@ -47,11 +47,10 @@ namespace TaskList.Services
             return _unitOfWork.Projects.GetById(id);
         }
 
-        public void UpdateProject(Project project)
+        public void UpdateProject(Project projectToBeUpdate, Project newProject)
         {
-            var projectForUpdating = _unitOfWork.Projects.GetById(project.ProjectId);
-            projectForUpdating.Name = project.Name;
-            projectForUpdating.IsCompleted = project.IsCompleted;
+            projectToBeUpdate.Name = newProject.Name;
+            projectToBeUpdate.IsCompleted = newProject.IsCompleted;
 
             _unitOfWork.Commit();
         }
