@@ -14,10 +14,6 @@ namespace TaskList.Api.Validators
             RuleFor(t => t.Name)
                 .NotEmpty()
                 .MaximumLength(100);
-
-            RuleFor(t => t.ProjectId)
-                .NotEmpty()
-                .WithMessage("'Project Id' must not be 0.");
         }
     }
 }
