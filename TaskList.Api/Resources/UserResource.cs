@@ -5,10 +5,11 @@ using System.Threading.Tasks;
 
 namespace TaskList.Api.Resources
 {
-    public class SaveProjectResource
+    public class UserResource
     {
-        public string Name { get; set; }
-        public bool IsCompleted { get; set; }
         public int UserId { get; set; }
+        public string Login { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }

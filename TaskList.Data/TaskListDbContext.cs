@@ -11,6 +11,7 @@ namespace TaskList.Data
     {
         public DbSet<ToDoItem> ToDoItems { get; set; }
         public DbSet<Project> Projects { get; set; }
+        public DbSet<User> Users { get; set; }
 
         public TaskListDbContext(DbContextOptions<TaskListDbContext> options) 
             : base(options) 
@@ -23,6 +24,9 @@ namespace TaskList.Data
 
             modelBuilder
                 .ApplyConfiguration(new ProjectConfiguration());
+
+            modelBuilder
+                .ApplyConfiguration(new UserConfiguration());
         }
     }
 }

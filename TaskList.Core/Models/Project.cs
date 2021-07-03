@@ -1,8 +1,4 @@
-﻿using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace TaskList.Core.Models
 {
@@ -10,7 +6,7 @@ namespace TaskList.Core.Models
     {
         public Project()
         {
-            ToDoItems = new Collection<ToDoItem>();
+            ToDoItems = new List<ToDoItem>();
         }
 
         public int ProjectId { get; set; }
@@ -18,5 +14,8 @@ namespace TaskList.Core.Models
         public bool IsCompleted { get; set; }
 
         public ICollection<ToDoItem> ToDoItems { get; set; }
+
+        public int UserId { get; set; }
+        public User User { get; set; }
     }
 }

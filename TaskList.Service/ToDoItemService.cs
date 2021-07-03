@@ -47,13 +47,9 @@ namespace TaskList.Services
             return _unitOfWork.ToDoItems.GetById(id);
         }
 
-        public void UpdateToDoItem(ToDoItem toDoItemToBeUpdate, ToDoItem toDoItem)
+        public void UpdateToDoItem(ToDoItem toDoItem)
         {
-            toDoItemToBeUpdate.Name = toDoItem.Name;
-            toDoItemToBeUpdate.IsCompleted = toDoItem.IsCompleted;
-            toDoItemToBeUpdate.IsFromInbox = toDoItem.IsFromInbox;
-            toDoItemToBeUpdate.ProjectId = toDoItem.ProjectId;
-
+            _unitOfWork.ToDoItems.Update(toDoItem);
             _unitOfWork.Commit();
         }
     }

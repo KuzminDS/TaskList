@@ -10,5 +10,6 @@ namespace TaskList.Api.Resources
         public int ProjectId { get; set; }
         public string Name { get; set; }
         public bool IsCompleted { get; set; }
+        public UserResource User { get; set; }
     }
 }

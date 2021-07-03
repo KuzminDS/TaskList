@@ -17,6 +17,11 @@ namespace TaskList.Data.Repositories
             _dbContext = dbContext;
         }
 
+        protected TaskListDbContext TaskListDbContext
+        {
+            get { return _dbContext as TaskListDbContext; }
+        }
+
         public void Add(T entity)
         {
             _dbContext.Set<T>().Add(entity);
@@ -54,7 +59,7 @@ namespace TaskList.Data.Repositories
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            _dbContext.Set<T>().Update(entity);
         }
     }
 }

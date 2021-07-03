@@ -9,6 +9,7 @@ namespace TaskList.Core
     {
         IToDoItemRepository ToDoItems { get; }
         IProjectRepository Projects { get; }
+        IUserRepository Users { get; }
         int Commit();
     }
 }

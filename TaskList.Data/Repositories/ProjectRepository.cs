@@ -13,11 +13,6 @@ namespace TaskList.Data.Repositories
         public ProjectRepository(TaskListDbContext context)
             : base(context) { }
 
-        private TaskListDbContext TaskListDbContext
-        {
-            get { return _dbContext as TaskListDbContext; }
-        }
-
         public Project GetProjectByName(string projectName)
         {
             return TaskListDbContext.Projects

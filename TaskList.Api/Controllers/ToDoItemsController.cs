@@ -77,7 +77,8 @@ namespace TaskList.Api.Controllers
                 return NotFound();
 
             var toDoItem = _mapper.Map<SaveToDoItemResource, ToDoItem>(saveToDoItemResource);
-            _toDoItemService.UpdateToDoItem(toDoItemToBeUpdate, toDoItem);
+            toDoItem.ToDoItemId = id;
+            _toDoItemService.UpdateToDoItem(toDoItem);
 
             var updatedToDoItem = _toDoItemService.GetToDoItem(id);
             var updatedToDoItemResource = _mapper.Map<ToDoItem, ToDoItemResource>(updatedToDoItem);

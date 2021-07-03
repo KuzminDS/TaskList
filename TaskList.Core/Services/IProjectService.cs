@@ -12,7 +12,7 @@ namespace TaskList.Core.Services
         Project GetProject(int id);
         Project GetWithToDoItemsById(int id);
         void CreateProject(Project project);
-        void UpdateProject(Project projectToBeUpdate, Project newProject);
+        void UpdateProject(Project project);
         void DeleteProject(Project project);
     }
 }

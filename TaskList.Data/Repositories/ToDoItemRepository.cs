@@ -13,11 +13,6 @@ namespace TaskList.Data.Repositories
         public ToDoItemRepository(TaskListDbContext dbContext)
             : base(dbContext) { }
 
-        private TaskListDbContext TaskListDbContext
-        {
-            get { return _dbContext as TaskListDbContext;  }
-        }
-
         public IEnumerable<ToDoItem> GetAllWithProject()
         {
             return TaskListDbContext.ToDoItems

@@ -10,6 +10,7 @@ namespace TaskList.Api.Resources
         public string Name { get; set; }
         public bool IsCompleted { get; set; }
         public bool IsFromInbox { get; set; }
-        public int ProjectId { get; set; }
+        public int UserId { get; set; }
+        public int? ProjectId { get; set; }
     }
 }

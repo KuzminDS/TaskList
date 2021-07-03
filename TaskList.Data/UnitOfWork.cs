@@ -7,11 +7,12 @@ using TaskList.Data.Repositories;
 
 namespace TaskList.Data
 {
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork, IDisposable
     {
         private readonly TaskListDbContext _context;
         private ToDoItemRepository _itemRepository;
         private ProjectRepository _projectRepository;
+        private UserRepository _userRepository;
 
         public UnitOfWork(TaskListDbContext context)
         {
@@ -23,6 +24,9 @@ namespace TaskList.Data
 
         public IProjectRepository Projects =>
             _projectRepository ??= new ProjectRepository(_context);
+
+        public IUserRepository Users =>
+            _userRepository ??= new UserRepository(_context);
 
         public int Commit()
         {

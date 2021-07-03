@@ -15,13 +15,16 @@ namespace TaskList.Api.Mapping
             // Domain to Resource
             CreateMap<ToDoItem, ToDoItemResource>();
             CreateMap<Project, ProjectResource>();
+            CreateMap<User, UserResource>();
 
             // Resource to Domain
             CreateMap<ToDoItemResource, ToDoItem>();
             CreateMap<ProjectResource, Project>();
+            CreateMap<UserResource, User>();
 
             CreateMap<SaveToDoItemResource, ToDoItem>();
             CreateMap<SaveProjectResource, Project>();
+            CreateMap<SaveUserResource, User>();
         }
     }
 }

@@ -21,7 +21,7 @@ namespace TaskList.Data.Configuration
             builder
                 .Property(t => t.Name)
                 .IsRequired()
-                .HasMaxLength(100);
+                .HasMaxLength(300);
 
             builder
                 .Property(t => t.IsCompleted)
@@ -35,6 +35,11 @@ namespace TaskList.Data.Configuration
                 .HasOne(t => t.Project)
                 .WithMany(p => p.ToDoItems)
                 .HasForeignKey(t => t.ProjectId);
+
+            builder
+                .HasOne(t => t.User)
+                .WithMany(u => u.ToDoItems)
+                .HasForeignKey(t => t.UserId);
 
             builder
                 .ToTable("ToDoItems");

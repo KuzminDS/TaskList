@@ -13,7 +13,7 @@ namespace TaskList.Api.Validators
         {
             RuleFor(p => p.Name)
                 .NotEmpty()
-                .MaximumLength(100);
+                .MaximumLength(300);
         }
     }
 }

@@ -77,7 +77,8 @@ namespace TaskList.Api.Controllers
                 return NotFound();
 
             var project = _mapper.Map<SaveProjectResource, Project>(saveProjectResource);
-            _projectService.UpdateProject(projectToBeUpdate, project);
+            project.ProjectId = id;
+            _projectService.UpdateProject(project);
 
             var updatedProject = _projectService.GetProject(id);
             var updatedProjectResource = _mapper.Map<Project, ProjectResource>(updatedProject);
